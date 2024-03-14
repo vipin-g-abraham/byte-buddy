@@ -28,7 +28,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build module with flaky test
-      run: mvn clean install -DskipTests -pl byte-buddy-dep
+      run: mvn clean install -DskipTests -pl byte-buddy-dep -am
     - name: Run test
       run: mvn -pl byte-buddy-dep test edu.illinois:nondex-maven-plugin:2.1.1:nondex -Dtest=net.bytebuddy.description.method.MethodDescriptionLatentTest#testExceptions
 
